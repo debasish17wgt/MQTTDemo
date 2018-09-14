@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String BROKER_URL = "192.168.1.173";
     private String BROKER_PORT = "1883";
+    private String USERNAME = "deba";
+    private String PASSWORD = "12345678";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +109,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mqttConnectOptions.setCleanSession(false);
         mqttConnectOptions.setAutomaticReconnect(true);
         //mqttConnectOptions.setWill(et_pub_topic.getText().toString(), "I am going offline".getBytes(), 1, true);
-        mqttConnectOptions.setUserName("mqttusers");
-        mqttConnectOptions.setPassword("12345678".toCharArray());
+        mqttConnectOptions.setUserName(USERNAME);
+        mqttConnectOptions.setPassword(PASSWORD.toCharArray());
         return mqttConnectOptions;
     }
 
